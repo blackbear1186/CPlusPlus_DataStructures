@@ -24,11 +24,11 @@ class C_Numbers{
 };
 
 /*
-**    Author: 
+**    Author: Berlin Johnson
 **    Function Purpose: 
-**        
-**    Function Output: 
-**    Side Effects: 
+**        To initialize p_numArray and p_arraySize.
+**    Function Output: Nothing
+**    Side Effects: Nothing
 */
 C_Numbers::C_Numbers(){
     this->p_numArray = NULL;
@@ -37,22 +37,22 @@ C_Numbers::C_Numbers(){
 }
 
 /*
-**    Author: 
+**    Author: Berlin Johnson
 **    Function Purpose: 
-**        
-**    Function Output: 
-**    Side Effects: 
+**        To deallocate memory and do cleanup for p_numArray.
+**    Function Output: Nothing
+**    Side Effects: Nothing
 */
 C_Numbers::~C_Numbers(){
     delete[] this->p_numArray;
 }
 
 /*
-**    Author: 
+**    Author: Berlin Johnson
 **    Function Purpose: 
-**        
+**        To call p_sortArray.
 **    Function Output: 
-**    Side Effects: 
+**    Side Effects: If p_sortArray throws an exception, catch and print the exception.
 */
 
 void C_Numbers::sortArray(void){
@@ -65,11 +65,13 @@ void C_Numbers::sortArray(void){
 }
 
 /*
-**    Author: 
+**    Author: Berlin Johnson
 **    Function Purpose: 
-**        
-**    Function Output: 
+**        To sort p_numArray by comparing the current value to the lowest value.
+**    Function Output: Nothing
 **    Side Effects: 
+        p_numArray is sorted from smallest to largest value. If p_numArray is empty, then an exception is thrown.
+
 */
 
 void C_Numbers::p_sortArray(void){
@@ -79,13 +81,13 @@ void C_Numbers::p_sortArray(void){
     } 
     else {
         for(int index = 0; index < this->p_arraySize; index++){
-            int minimumValue = index;
+            int minimumElement = index;
             for(int k = k + 1; k < this->p_arraySize; k++){
-                if(this->p_numArray[k] < this->p_numArray[minimumValue]){
-                minimumValue = k;
+                if(this->p_numArray[k] < this->p_numArray[minimumElement]){
+                minimumElement = k;
                 }
         }
-        this->p_exchangeElement(&this->p_numArray[minimumValue], &this->p_numArray[index]);
+        this->p_exchangeElement(&this->p_numArray[minimumElement], &this->p_numArray[index]);
         }
     }
     
@@ -95,11 +97,11 @@ void C_Numbers::p_sortArray(void){
 
 
 /*
-**    Author: 
+**    Author: Berlin Johnson
 **    Function Purpose: 
-**        
-**    Function Output: 
-**    Side Effects: 
+**        To swap two elements.
+**    Function Output: Nothing
+**    Side Effects: Nothing
 */
 
 void C_Numbers::p_exchangeElement(int *a, int *b){
@@ -109,11 +111,11 @@ void C_Numbers::p_exchangeElement(int *a, int *b){
 }
 
 /*
-**    Author: 
+**    Author: Berlin Johnson
 **    Function Purpose: 
-**        
-**    Function Output: 
-**    Side Effects: 
+**        To call p_printArray.
+**    Function Output: Nothing
+**    Side Effects: Display a message if an exception is caught.
 */
 
 void C_Numbers::printArray(void){
@@ -126,11 +128,11 @@ void C_Numbers::printArray(void){
 }
 
 /*
-**    Author: 
+**    Author: Berlin Johnson
 **    Function Purpose: 
-**        
-**    Function Output: 
-**    Side Effects: 
+**        To call the p_readFile.
+**    Function Output: Nothing
+**    Side Effects: Display a message if an exception is caught.
 */
 void C_Numbers::readFile(char fileName[100]){
     try {
@@ -142,11 +144,11 @@ void C_Numbers::readFile(char fileName[100]){
 }
 
 /*
-**    Author: 
+**    Author: Berlin Johnson
 **    Function Purpose: 
-**        
+**        To iterate through p_numArray and print each value. 
 **    Function Output: 
-**    Side Effects: 
+**    Side Effects: p_numArray is iterated through and printed. If p_numArray is empty, an exception is thrown.
 */
 void C_Numbers::p_printArray(void){
     if(this->p_arraySize == 0){
@@ -163,11 +165,11 @@ void C_Numbers::p_printArray(void){
 }
 
 /*
-**    Author: 
+**    Author: Berlin Johnson
 **    Function Purpose: 
-**        
-**    Function Output: 
-**    Side Effects: 
+**        To read from input.dat and populate the class variables p_numArray and p_arraySize.
+**    Function Output: Nothing
+**    Side Effects: input.dat is read, p_numArray is populated, p_arraySize is populated. An exception is thrown is the file cannot be opened.
 */
 void C_Numbers::p_readFile(char fileName[100]){
     ifstream inputFile;
@@ -190,11 +192,11 @@ void C_Numbers::p_readFile(char fileName[100]){
 
 
 /*
-**    Author: 
+**    Author: Berlin Johnson
 **    Function Purpose: 
-**        
-**    Function Output: 
-**    Side Effects: 
+**        To execute the functions readFile, sortArray, and printArray.
+**    Function Output: Nothing
+**    Side Effects: Nothing
 */
 int main(int argc, char *argv[]){
 
