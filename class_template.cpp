@@ -71,7 +71,11 @@ void C_Numbers::sortArray(void){
 **    Function Output: Nothing
 **    Side Effects: 
         p_numArray is sorted from smallest to largest value. If p_numArray is empty, then an exception is thrown.
-
+      
+      I used https://www.geeksforgeeks.org/selection-sort/ as a reference to build my sorting function.
+      I used the same structure that was presented on the website. Construct two for loops, establish a minimum,
+      compare each element value to the minimum value and if the current value is less than the current minimum
+      value, swap those two.
 */
 
 void C_Numbers::p_sortArray(void){
@@ -102,12 +106,15 @@ void C_Numbers::p_sortArray(void){
 **        To swap two elements.
 **    Function Output: Nothing
 **    Side Effects: Nothing
+
+      I used https://www.geeksforgeeks.org/selection-sort/ as a reference to build my exchangeElement function.
+      I used the same structure which is to swap the two elements. Set tempValue equal to a, a equal to b, and b equal to tempValue.
 */
 
 void C_Numbers::p_exchangeElement(int *a, int *b){
-    int temp = *a;
+    int tempValue = *a;
     *a = *b;
-    *b = temp;
+    *b = tempValue;
 }
 
 /*
